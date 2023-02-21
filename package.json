@@ -1,0 +1,18 @@
+{
+  "name": "deodar-block-maker",
+  "version": "1.0.0",
+  "description": "Generate Deodar blocks via commandline",
+  "main": "index.js",
+  "scripts": {
+    "make": "node index.js"
+  },
+  "keywords": [
+    "Deodar",
+    "WordPress"
+  ],
+  "author": "Joshua Hallee",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.0"
+  }
+}
