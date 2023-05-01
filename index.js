@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fse = require('fs-extra');
 
 const bnBase = process.argv[2]; // media text (user input)

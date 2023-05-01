@@ -9,3 +9,18 @@ Media Text example block.
 ```
 npm run make "Media Text"
 ```
+
+## Installing as a Global Command
+
+```
+npm pack
+```
+
+```
+npm install -g deodar-block-maker-1.0.0.tgz
+```
+
+To Run:
+```
+deodar-block-maker "example block"
+```

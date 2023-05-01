@@ -4,7 +4,7 @@
   "description": "Generate Deodar blocks via commandline",
   "main": "index.js",
   "scripts": {
-    "make": "node index.js"
+    "deodar-block-maker": "node index.js"
   },
   "keywords": [
     "Deodar",
@@ -14,5 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^11.1.0"
-  }
+  },
+  "bin": "index.js"
 }
