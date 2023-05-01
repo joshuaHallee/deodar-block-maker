@@ -19,14 +19,12 @@ const bnUnderscoreUppercase = bnSpaceUppercase.split(" ").join("_"); // Media_Te
 const bnKebab = bnSpaceLowercase.split(" ").join("-"); // media-text
 
 // file paths
-const block = `./blocks/${bnKebab}/class-${bnKebab}.block.php`;
-const php = `./blocks/${bnKebab}/${bnKebab}.php`;
-const scss = `./blocks/${bnKebab}/${bnKebab}.scss`;
+const block = `./blocks/acf/${bnKebab}/class-${bnKebab}.block.php`;
+const php = `./blocks/acf/${bnKebab}/${bnKebab}.php`;
+const scss = `./blocks/acf/${bnKebab}/${bnKebab}.scss`;
 
-async function makeBlock (f) {
-    try {
-        await fse.outputFile(f,
-`<?php 
+// code snippets
+const codeBlock = `<?php 
 
 class ${bnUnderscoreUppercase}_Block extends Deodar_Block{
 
@@ -53,24 +51,40 @@ class ${bnUnderscoreUppercase}_Block extends Deodar_Block{
     public static array $params = array(
         'script' => false,
     );
-}`);
-    } catch (err) {
-        console.error(err)
-    }
+}`;
+const codePhp = `<section class="${bnKebab}">
+    <div class="${bnKebab}__content">
+        
+    </div>
+</section>`;
+const codeScss = `.${bnKebab} {
+
 }
 
+.${bnKebab}__content {
+    
+}`;
+
+// make files
+async function makeBlock (f) {
+    try {
+        await fse.outputFileSync(f, codeBlock, { flag: "wx" })
+    } catch (err) {
+        console.error("" + err)
+    }
+}
 async function makePhp (f) {
     try {
-        await fse.outputFile(f, '');
+        await fse.outputFileSync(f, codePhp, { flag: "wx" })
     } catch (err) {
-        console.error(err)
+        console.error("" + err)
     }
 }
 async function makeScss (f) {
     try {
-        await fse.outputFile(f, '');
+        await fse.outputFileSync(f, codeScss, { flag: "wx" })
     } catch (err) {
-        console.error(err)
+        console.error("" + err)
     }
 }
 
